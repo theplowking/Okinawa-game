@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+
+    <title>
+     Welcome to Okinawa
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Import maps polyfill -->
+    <!-- Remove this when import maps will be widely supported -->
+    <script src="game.js"
+    ></script>
+    <script src="https://kit.fontawesome.com/921bd8fdbd.js"></script>
+    <style>
+
+      body {
+        overflow: hidden;
+        margin: 0px;
+        background: #000000; 
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif; 
+        font-weight: lighter;
+        
+      }
+
+      h1 {
+        font-weight: lighter;
+      }
+
+      h3 {
+        color: #a2a1a1;
+        font-weight: lighter;
+      }
+
+        video::-webkit-media-controls {
+	    display: none;
+        }
+
+        video {
+        display: none;
+        pointer-events: none;
+        }
+
+        .divContainer{
+
+          text-align: center;
+        }
+
+        /* video container */
+        .videoContainer{
+          /* width:380px;
+          height:163px;*/
+          max-width: 1280px; 
+          width: 80%;
+          position:relative;
+          overflow:hidden;
+          background:#000;
+          color:#ccc;
+          border-radius: 6px;
+          border: 1px solid rgba(0,0,0,0.8);
+          box-shadow: 0 0 5px rgba(0,0,0,0.5);
+          margin: 50px auto 0;
+        }
+        .videoContainer:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+          z-index: 6;
+          border-radius: 6px;
+          pointer-events: none;
+        }
+
+        button {
+          -webkit-border-radius: 28;
+          -moz-border-radius: 28;
+          border-radius: 28px;
+          color: #ffffff;
+          font-size: 18px;
+          padding: 10px 14px 10px 14px;
+          border: solid #ffffff 2px;
+          text-decoration: none;
+          background: #000000;
+          margin: 20px 10px;
+        }
+
+        button:hover {
+          background: #c4c4c4;
+          text-decoration: none;
+        }
+
+        input[type=text]{
+            width: 96px;
+            /* height: 30px; */
+            padding-left: 10px;
+            border-radius: 28px;
+
+            color: #ffffff;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            border: solid #ffffff 2px;
+            text-decoration: none;
+            background: #000000;
+            margin: 20px 10px;
+            }
+            
+        input[type=text]:focus {
+            border: solid #ffffff 2px;
+            color: #ffffff;
+        }
+    </style>
+    <style>
+              #phone {
+          background-color: black;
+          width: 375px;
+          height: 667px;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          z-index: 1;
+          position: relative;
+          margin: auto;
+        }
+        .main {
+          flex-grow: 1;
+          z-index: 1;
+          text-align: center;
+        }
+        .footer {
+          flex-basis: 100px;
+        }
+        .decline, .accept {
+          height: 100%;
+          display: inline-block;
+          width: 150px;
+          font-size: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .accept {
+          background-color: #4cda64;
+          border-top-left-radius: 50px;
+          border-bottom-left-radius: 50px;
+          float: right;
+        }
+        .decline {
+          border-top-right-radius: 50px;
+          float: left;
+          background-color: #ff3b2f;
+          border-bottom-right-radius: 50px;
+        }
+        .avatar-wrapper {
+          border-radius: 50%;
+          display: block;
+          box-sizing: border-box;
+          margin: 100px auto 0 auto;
+          position: relative;
+          background-image: url('./vid/akkiko.png');
+          width: 200px;
+          height: 200px;
+          background-size: cover;
+          
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar-wrapper::after {
+          content: "";
+          background-color: white;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          z-index: -1;
+          border-radius: 50%;
+          animation: 2s pulse infinite;
+        }
+
+        @keyframes pulse {
+          from {
+            transform: none;
+            opacity: 0.7;
+          }
+          to {
+            transform: scale(1.5);
+            opacity: 0;
+          }
+        }
+
+        .header-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 200px;
+          background-color: #4cda64;
+          z-index: -2;
+          border-bottom-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+        }
+
+        .incoming {
+          margin-top: 50px;
+          font-size: 25px;
+          text-transform: uppercase;
+          font-weight: 900;
+          color: gray;
+        }
+        .name {
+          font-size: 50px;
+          font-weight: 300;
+          margin: 0;
+        }
+    </style>
+  </head>
+
+  <body>
+      
+      <div id="ready" class="divContainer">
+        <div style="width: 410px;
+        margin: auto;
+        margin-top: 100px;
+        text-align: left;
+        font-size: 18px;">
+        <ul>
+          <li>Invite your Wizard team into a huddle</li>
+          <li>Share your screen</li>
+          <li>Make sure sound share is on a team can hear</li>
+        </ul>
+      </div>
+        <button type="button" onclick="ready()" id="button">Ready to play</button>
+      </div>
+        <div id="phone" style="display: none;">
+          <audio id="audioElement" loop>
+            <source src="./vid/call.mp3" type="audio/mpeg">
+          </audio>
+          <div class="main">
+            <div class="header-background"></div>
+            <div class="avatar-wrapper"></div>
+            <h2 class="incoming">Incoming Call</h2>
+            <h1 class="name">Akiko Mori</h1>
+          </div>
+          <div class="footer">
+            <div class="decline">
+                  <i class="fas fa-phone" style="transform:rotate(-135deg)"></i>
+            </div>
+            <a href="#" style="color:white;"><div class="accept" onclick="intro()">
+                  <i class="fas fa-phone"></i>
+            </div>
+          </a>
+          </div>
+        </div>
+
+        <div id="room" style="display: none;" class="divContainer">
+            <video class="videoContainer"
+                id="video"
+                autoplay
+                muted
+            >
+                <source src="./vid/intro.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <button type="button" onclick="mainRoom()" id="button">Help</button>
+            <button type="button" onclick="restartVideo()" id="button">↻</button>
+            <input id="code" type="text" placeholder="Enter code" style="display: none;">
+
+          </div>        
+
+        
+  </body>
+</html>
