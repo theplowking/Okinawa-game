@@ -325,7 +325,7 @@ function ending() {
     deleteAllButtons();
 
     var buttonsData = {
-        'Well done - you escaped! Head back to Slack and type in XYZ.': function() {
+        'Thank you for using WiZ-cAm! Use the referral code "Malek4Pres" for a free jar of potion': function() {
             alert('You finished, head back to Slack now.');
         },
     };
